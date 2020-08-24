@@ -1,6 +1,7 @@
 package com.mybatisplus.controller.sys.user;
 
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,12 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020-08-24
  */
 @RestController
-@RequestMapping("//sys-user")
+@RequestMapping("/sys-user")
 public class SysUserController {
+
+    @GetMapping("/hello")
+    public String hello(){
+        return "Hello!";
+    }
 
 }
