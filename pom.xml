@@ -130,6 +130,14 @@
             <artifactId>beetl</artifactId>
             <version>3.1.8.RELEASE</version>
         </dependency>
+
+        <!--SQL分析打印-p6spy-->
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.9.1</version>
+        </dependency>
+        
     </dependencies>
 
     <dependencyManagement>
