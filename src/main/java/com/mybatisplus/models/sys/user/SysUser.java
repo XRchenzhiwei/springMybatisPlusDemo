@@ -3,13 +3,15 @@ package com.mybatisplus.models.sys.user;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author czw
@@ -37,7 +39,7 @@ public class SysUser extends Model<SysUser> {
     /**
      * 创建人ID
      */
-    private String addUser;
+    private Long addUser;
 
     /**
      * 创建时间
@@ -47,7 +49,7 @@ public class SysUser extends Model<SysUser> {
     /**
      * 修改人ID
      */
-    private String modUser;
+    private Long modUser;
 
     /**
      * 修改时间

@@ -10,6 +10,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 /**
  * <p>
  * 服务实现类
@@ -21,17 +23,29 @@ import org.springframework.stereotype.Service;
 @Service
 public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> implements ISysUserService {
 
+    @Resource
     private SysUserMapper sysUserMapper;
 
-    @Autowired
-    public void setSysUserMapper(SysUserMapper sysUserMapper) {
-        this.sysUserMapper = sysUserMapper;
-    }
 
     @Override
     public Page getPageList(Integer pageSize, Integer pageNum, String userName) {
         QueryWrapper<SysUser> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq(!StringUtils.isEmpty(userName), "user_name", userName);
         return sysUserMapper.selectPage(new Page<>(pageNum, pageSize), queryWrapper);
+    }
+
+    @Override
+    public void add(SysUser sysUser) {
+        sysUserMapper.insert(sysUser);
+    }
+
+    @Override
+    public void delete(Long id) {
+        sysUserMapper.deleteById(id);
+    }
+
+    @Override
+    public void edit(SysUser sysUser) {
+        sysUserMapper.updateById(sysUser);
     }
 }
